@@ -13,3 +13,12 @@ app.listen(port, () => {
     console.log('listening to port', port);
 });
 
+
+
+
+
+//creating a place were we can store our functions 
+app.get('/calcformulas', (req, res) => {
+    console.log('testing calcformulas');
+    
+})
