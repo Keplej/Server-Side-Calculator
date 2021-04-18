@@ -1,9 +1,9 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Johnny Keple Calculator!
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+The project here is for a server side calcuator! What was done here is getting information on the server using different functions and server files. 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
