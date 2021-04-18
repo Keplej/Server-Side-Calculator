@@ -1,24 +1,38 @@
 console.log('in client');
 $(document).ready(onReady);
 
+// setting up a global for our operators
 
+let running = [];
 
 //This is where we will have out click functions at
 function onReady() {
     console.log('onReady function');
     $('#clearButton').on('click', clearNumbers);
     $('#equalButton').on('click', tableFunctions);
-    gettingInformation();
 }
+
+
+//This function is for setting up for our operators
+function runningFunc(calcs) {
+    calcs.preventDefault();
+    console.log('clicked running');
+    let run = $(this).val();
+    running.push(run);
+    console.log(running);
+}
+
 
 function tableFunctions() {
     console.log('tableFunctions showing');
+    let numberOne = $('#displayOne').val();
+    let numberTwo = $('#displayTwo').val();
+    let chosenRun = running[running.length - 1];
+
     let newCalculation = {
-        numberOne: $('#displayOne').val(),
-        running: $('#operation').val(),
-        numberTwo: $('#displayTwo').val(),
-        equals: $('#equalButton').val(),
-        clear: $('#clearButton').val()
+        firstNum: numberOne,
+        lastNum: numberTwo,
+        run: chosenRun
     }
     console.log('testing new calc', newCalculation);
 
