@@ -26,10 +26,18 @@ app.get('/calcformulas', (req, res) => {
 
 //this is where we put our function and if statement in so it shows up on the server
 app.post('/calcformulas', (req, res) => {
-    let newCalculation = req.body;
-    console.log('newCalculations', newCalculation);
-    newCalculation.result = 0;
-
-    testCalculation.push(newCalculation);
+    let newCalculations = req.body;
+    console.log('newCalculations', newCalculations);
+    newCalculations.result = 0;
+    if (newCalculations.run === '+') {
+        newCalculations.result = parseInt(newCalculations.firstNum) + parseInt(newCalculations.lastNum);//we use two parseInt for + because it will show up as a sting if not
+    } else if (newCalculations.run === '-') {
+        newCalculations.result = parseInt(newCalculations.firstNum - newCalculations.lastNum);
+    } else if (newCalculations.run === '*') {
+        newCalculations.result = parseInt(newCalculations.firstNum * newCalculations.lastNum);
+    } else if (newCalculations.run === '/') {
+        newCalculations.result = parseInt(newCalculations.firstNum / newCalculations.lastNum);
+    }
+    testCalculation.push(newCalculations);
     res.sendStatus(201);
 })

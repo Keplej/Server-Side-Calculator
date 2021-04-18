@@ -10,6 +10,7 @@ function onReady() {
     console.log('onReady function');
     $('#clearButton').on('click', clearNumbers);
     $('#equalButton').on('click', tableFunctions);
+    $('.functions').on('click', runningFunc);
 }
 
 
