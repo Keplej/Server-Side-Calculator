@@ -24,9 +24,12 @@ app.get('/calcformulas', (req, res) => {
     res.send(testCalculation)//need to add in an array or function
 })
 
+//this is where we put our function and if statement in so it shows up on the server
 app.post('/calcformulas', (req, res) => {
     let newCalculation = req.body;
     console.log('newCalculations', newCalculation);
+    newCalculation.result = 0;
+
     testCalculation.push(newCalculation);
     res.sendStatus(201);
 })

@@ -49,6 +49,7 @@ function tableFunctions() {
             alert('did not work');
             console.log(error);
         })
+        gettingInformation();
 }
 
 
@@ -73,18 +74,11 @@ function gettingInformation() {
 //come back and work on this section because it has an error showing up!
 function render(placeholder) {
     $('#information').empty();
-    for (let item of placeholder) {
+    $('#pastCalcs').empty();
+    $('#information').append(`<li>${placeholder[placeholder.length - 1].result}</li>`);
+    for (let item of placeholder) {//using result when we add it in server side
         console.log(`${item.numberOne} ${item.running} ${item.numberTwo}`);
-        $('#information').append(`
-           <li>
-           ${placeholder.numberOne}
-           ${placeholder.running}
-           ${placeholder.numberTwo}
-           ${placeholder.equals}
-           ${placeholder.clear}
-           </li>                 
-        `)
-        
+        $('#pastCalcs').append(`<p>${item.firstNum} ${item.run} ${item.lastNum} = ${item.result}</p>`)
     }
 }
 
